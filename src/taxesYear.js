@@ -1,4 +1,3 @@
-
 function isrAnual(tablaSalario){
 
 // funcion para buscal el valor de la uma
@@ -24,10 +23,8 @@ function isrAnual(tablaSalario){
 
     const yearSelected = document.getElementById("year");
     const yearValue = parseInt(yearSelected.value);
-    console.log(yearValue);
 
     //aqui comenzamos a traer los valores exentos
-
     function getExento (valor){
       let exento = document.getElementById(valor);
       let exentoValue = parseFloat(exento.value);
@@ -40,14 +37,9 @@ function isrAnual(tablaSalario){
 
     const functUma = buscarValorUma(yearValue);
     const valorUma = functUma.value;
-    console.log({valorUma});
 
     const maxExentoAgui = parseFloat((valorUma * 30).toFixed(2));
     const maxExentoPTU = parseFloat((valorUma * 15).toFixed(2));
-    console.log({
-      maxExentoAgui,
-      maxExentoPTU
-    })
 
     const arraySalExento = [];
 
@@ -65,15 +57,11 @@ function isrAnual(tablaSalario){
       arraySalExento.push(maxExentoPTU);
     };
 
-    console.log(arraySalExento);
-
     const sumArraySalExento = arraySalExento.reduce(function (salario, nuevoSalaraio){
       return salario + nuevoSalaraio;
     });
-    console.log(sumArraySalExento);
 // acomodamos esta constante para que pueda ser leida
     const salarioAcomulado = sumaSalario - sumArraySalExento;
-    console.log(salarioAcomulado);
 
     //aqui comenzamos a validar el año del ejercicio
     let isrLevel;
@@ -97,17 +85,14 @@ function isrAnual(tablaSalario){
         return isr.end >= salarioAcomulado;
       });
     }
-    console.log(isrLevel);
 
     // empezamos a calcular
     //aqui sumamos la cuotafija y el % que le aplicamos al exedente
-    
-
     const isrFijo = isrLevel.cuotaFija;
-    const isrPorcentaje = (isrLevel.apliPorcentaje / 100).toFixed(4);
-    const isrExedente = ((salarioAcomulado - isrLevel.start) * isrPorcentaje).toFixed(2);
+    const isrPorcentaje = parseFloat((isrLevel.apliPorcentaje / 100).toFixed(4));
+    const isrExedente = parseFloat(((salarioAcomulado - isrLevel.start) * isrPorcentaje).toFixed(2));
     
-    const isrTotal = parseFloat(isrFijo + isrExedente).toFixed(2);
+    const isrTotal = parseFloat((isrFijo + isrExedente).toFixed(2));
 
     // aqui empezamos a imprimir los valores
     const tdSalaryAcomulado = document.getElementById("salAcomulado");
@@ -162,9 +147,7 @@ function calcularISR(){
     getSalary("october");
     getSalary("november");
     getSalary("december");
-
-    console.log(arraySalarios);
-
+    
     const isrFinal = isrAnual(arraySalarios);
 
     const tdIsr = document.getElementById("isrFinal");
