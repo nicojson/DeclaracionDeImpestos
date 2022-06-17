@@ -10,15 +10,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style/tableta.css" media="(min-width: 634px)">
   </head>
   <body>
     <header>
-      <img class="logo" src="./src/assets/logo-calculando.png" alt="logo" />
-      <p class="logo-title">Calculando</p>
-      <nav>
-        <ul>
+      <section class="header-logo-container">
+        <a href="./">
+          <img class="logo" src="./src/assets/logo-calculando.png" alt="logo" />
+          <p class="logo-title">Calculando</p>
+        </a>
+      </section>
+      <nav class="header-nav-container">
+        <ul class="nav-list-liks">
           <li>
-            <a href="./">Calaculadora de ISR</a>
+            <a href="./">Calculadora de ISR</a>
           </li>
           <li>
             <a href="./">Otras calculadoras</a>
@@ -28,203 +33,217 @@
     </header>
 
     <main>
-      <h1 class="main-title">Hola, Bienvenido al calculador de ISR</h1>
-      <label class="main-label-year" for="year">Ingresa el año del ejercicio</label>
-      <input type="text" id="year" />
-      <p class="main-subtitle">
-        Ingresa tu salario de cada mes rellenado con zeros los meses 
-        que no tubo salario</p>
-      <div class="main-form-container">
-        <form class="main--salaryAcomulado" action="">
-          <div>
-            <label for="juanary">
-                Enero
-            </label>
-            <input
-              type="number"
-              id="juanary"
-            />
-          </div>
-          <div>
-            <label for="february">
-                Febrero
-            </label>
-            <input
-              type="number"
-              id="february"
-            />
-          </div>
-          <div>
-            <label for="march">
-                Marzo
-            </label>
-            <input
-              type="number"
-              id="march"
-            />
-          </div>
-          <div>
-            <label for="april">
-                Abril
-            </label>
-            <input
-              type="number"
-              id="april"
-            />
-          </div>
-          <div>
-            <label for="may">
-                Mayo
-            </label>
-            <input
-              type="number"
-              id="may"
-            />
-          </div>
-          <div>
-            <label for="june">
-                Junio
-            </label>
-            <input
-              type="number"
-              id="june"
-            />
-          </div>
-          <div>
-            <label for="july">
-                Julio
-            </label>
-            <input
-              type="number"
-              id="july"
-            />
-          </div>
-          <div>
-            <label for="august">
-                Agosto
-            </label>
-            <input
-              type="number"
-              id="august"
-            />
-          </div>
-          <div>
-            <label for="september">
-                Septiembre
-            </label>
-            <input
-              type="number"
-              id="september"
-            />
-          </div>
-          <div>
-            <label for="october">
-                Octubre
-            </label>
-            <input
-              type="number"
-              id="october"
-            />
-          </div>
-          <div>
-            <label for="november">
-                Noviembre
-            </label>
-            <input
-              type="number"
-              id="november"
-            />
-          </div>
-          <div>
-            <label for="december">
-                Diciembre
-            </label>
-            <input
-              type="number"
-              id="december"
-            />
-          </div>
-        </form>
-  
-        <form class="main--deducibles">
-          <div>
-            <label for="aguinaldo">
-                Aguinaldo
-            </label>
-            <input
-              type="number"
-              id="aguinaldo"
-            />
-          </div>
-          <div>
-            <label for="ptu">
-                PTU
-            </label>
-            <input
-              type="number"
-              id="ptu"
-            />
-          </div>
-          <div>
-            <label for="otros">
-                Otros
-            </label>
-            <input
-              type="number"
-              id="otros"
-              placeholder="fondo, bonos, prima vacacional"
-            />
-          </div>
-        </form>
+      <div class="main-titles-container">
+        <h1 class="main-title">Hola, Bienvenido al calculador de ISR</h1>
+        <div class="main-year-container">
+          <label class="main-label-year" for="year">Ingresa el año del ejercicio</label>
+          <input type="text" id="year" />
+        </div>
+        <p class="main-subtitle">
+          Ingresa tu salario de cada mes rellenado con ceros los meses 
+          que no tubo salario</p>
       </div>
-      
-      <p id="defauldYear"></p>
-      
-      <div class="main-result-container">
-        <button class="primary-button main--primary-button" type="button"  
-        onclick="calcularISR()">
-          Calcular ISR
-        </button>
-        <table class="main-result-table">
-          <tbody>
-              <tr>
-                  <th>Salario acomulado</th>
-                  <td class="table-salario income" id="salAcomulado">$</td>
-              </tr>
-              <tr>
-                  <th>Exento</th>
-                  <td class="table-exento" id="salExento">$</td>
-              </tr>
-              <tr>
-                  <th>Gravado</th>
-                  <td class="tabla-grabado" id="salGravado">$</td>
-              </tr>
-              <tr>
-                  <th>Limite inferior</th>
-                  <td id="limInferior">$</td>
-              </tr>
-              <tr>
-                  <th>Limite superior</th>
-                  <td id="limSuperior">$</td>
-              </tr>
-              <tr>
-                  <th>Porcentaje</th>
-                  <td id="porcentajeMarginal">%</td>
-              </tr>
-              <tr>
-                  <th>Cuota marginal</th>
-                  <td class="cuota-marginal" id="cuotaMarginal">$</td>
-              </tr>
-              <tr>
-                  <th>Cuota fija</th>
-                  <td class="cuota-fija" id="cuotaFija">$</td>
-              </tr>
-              <tr>
-                  <th>ISR</th>
-                  <td class="isr outcome" id="isrFinal">$</td>
-              </tr>
-          </tbody>
-      </table>
+
+      <div class="main-calculator-container">
+        <div class="main-form-container">
+          <form class="main--salaryAcomulado" action="" id="resetSalary">
+            <div>
+              <label for="juanary">
+                  Enero
+              </label>
+              <input
+                type="number"
+                id="juanary"
+              />
+            </div>
+            <div>
+              <label for="february">
+                  Febrero
+              </label>
+              <input
+                type="number"
+                id="february"
+              />
+            </div>
+            <div>
+              <label for="march">
+                  Marzo
+              </label>
+              <input
+                type="number"
+                id="march"
+              />
+            </div>
+            <div>
+              <label for="april">
+                  Abril
+              </label>
+              <input
+                type="number"
+                id="april"
+              />
+            </div>
+            <div>
+              <label for="may">
+                  Mayo
+              </label>
+              <input
+                type="number"
+                id="may"
+              />
+            </div>
+            <div>
+              <label for="june">
+                  Junio
+              </label>
+              <input
+                type="number"
+                id="june"
+              />
+            </div>
+            <div>
+              <label for="july">
+                  Julio
+              </label>
+              <input
+                type="number"
+                id="july"
+              />
+            </div>
+            <div>
+              <label for="august">
+                  Agosto
+              </label>
+              <input
+                type="number"
+                id="august"
+              />
+            </div>
+            <div>
+              <label for="september">
+                  Septiembre
+              </label>
+              <input
+                type="number"
+                id="september"
+              />
+            </div>
+            <div>
+              <label for="october">
+                  Octubre
+              </label>
+              <input
+                type="number"
+                id="october"
+              />
+            </div>
+            <div>
+              <label for="november">
+                  Noviembre
+              </label>
+              <input
+                type="number"
+                id="november"
+              />
+            </div>
+            <div>
+              <label for="december">
+                  Diciembre
+              </label>
+              <input
+                type="number"
+                id="december"
+              />
+            </div>
+          </form>
+    
+          <form class="main--deducibles" id="resetOthers">
+            <div>
+              <label for="aguinaldo">
+                  Aguinaldo
+              </label>
+              <input
+                type="number"
+                id="aguinaldo"
+              />
+            </div>
+            <div>
+              <label for="ptu">
+                  PTU
+              </label>
+              <input
+                type="number"
+                id="ptu"
+              />
+            </div>
+            <div>
+              <label for="otros">
+                  Otros
+              </label>
+              <input
+                type="number"
+                id="otros"
+                placeholder="fondo, bonos, prima vacacional"
+              />
+            </div>
+          </form>
+        </div>
+        
+        <div class="main-result-container">
+          <p id="defauldYear"></p>
+          <div class="main-buttons-container">
+            <button class="primary-button main--primary-button" type="button"  
+            onclick="calcularISR()">
+              Calcular ISR
+            </button>
+            <button class="primary-button main--secondary-button" type="button"
+            value="Reset"  
+            onclick="clear1()">
+              Resetear
+            </button>
+
+          </div>
+          <table class="main-result-table">
+            <tbody>
+                <tr>
+                    <th>Salario acomulado</th>
+                    <td class="table-salario income" id="salAcomulado">$</td>
+                </tr>
+                <tr>
+                    <th>Exento</th>
+                    <td class="table-exento" id="salExento">$</td>
+                </tr>
+                <tr>
+                    <th>Gravado</th>
+                    <td class="tabla-grabado" id="salGravado">$</td>
+                </tr>
+                <tr>
+                    <th>Limite inferior</th>
+                    <td id="limInferior">$</td>
+                </tr>
+                <tr>
+                    <th>Limite superior</th>
+                    <td id="limSuperior">$</td>
+                </tr>
+                <tr>
+                    <th>Porcentaje</th>
+                    <td id="porcentajeMarginal">%</td>
+                </tr>
+                <tr>
+                    <th>Cuota marginal</th>
+                    <td class="cuota-marginal" id="cuotaMarginal">$</td>
+                </tr>
+                <tr>
+                    <th>Cuota fija</th>
+                    <td class="cuota-fija" id="cuotaFija">$</td>
+                </tr>
+                <tr>
+                    <th>ISR</th>
+                    <td class="isr outcome" id="isrFinal">$</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
       </div>
     </main>
 

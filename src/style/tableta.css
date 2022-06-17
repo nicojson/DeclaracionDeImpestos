@@ -1,0 +1,52 @@
+/* media query 634px */
+:root {
+  --green-dark: #073b4c;
+  --blue-metal: #118ab2;
+  --red-out: #990d35;
+  --green-in: #06d6a0;
+  --orange: #ffd166;
+  --sm: 1.2rem;
+  --md: 1.6rem;
+  --lg: 1.8rem;
+}
+
+header .nav-list-liks {
+	flex-direction: row;
+	gap: 16px;
+}
+
+header .nav-list-liks li {
+	height: 30px;
+}
+
+.main-titles-container {
+	text-align: center;
+}
+
+.main-titles-container .main-subtitle {
+	max-width: 300px;
+	margin: 16px auto;
+}
+
+.main-calculator-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-flow: row;
+}
+
+.main--deducibles {
+	margin: 12px 0;
+}
+
+.main-result-container {
+	justify-content: center;
+}
+
+footer {
+	font-size: var(--sm);
+	grid-template-columns:auto auto;
+}
+
+footer .footer-others-links {
+	flex-direction: row;
+}

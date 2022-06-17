@@ -13,7 +13,7 @@ function isrAnual(tablaSalario){
       return valor.year == 2021;
     })
     const umaError = document.getElementById("defauldYear");
-    umaError.innerText = `Año no selecionado por defecto es 2021`;
+    umaError.innerText = `Año ${yearUma} incorrecto por defecto es 2021`;
   };
   return uma;
   };
@@ -169,6 +169,12 @@ function calcularISR(){
 
     const tdIsr = document.getElementById("isrFinal");
     tdIsr.innerText = `$${isrFinal}`;
+}
+
+function clear1(){
+  document.getElementById("year").value = "";
+  document.getElementById("resetSalary").reset();
+  document.getElementById("resetOthers").reset();
 }
 
 

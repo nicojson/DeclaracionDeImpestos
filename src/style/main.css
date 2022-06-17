@@ -31,13 +31,19 @@ html {
 
 header {
 	display: grid;
-	grid-template-columns: auto auto 1fr;
+	grid-template-columns: auto 1fr;
 	position: sticky;
-	justify-items: center;
+	justify-items: end;
 	width: 100%;
-	height: 65px;
+	height: 80px;
 	align-items: center;
 	background-color: var(--green-dark);
+}
+
+.header-logo-container a {
+	display: flex;
+	cursor: pointer;
+	place-items: center;
 }
 
 .logo {
@@ -52,8 +58,26 @@ header {
 	font-size: 1.8rem;
 }
 
-header nav li {
-	margin-bottom: 4px;
+header .nav-list-liks {
+	display: flex;
+	flex-direction: column;
+	padding-right: 20px;
+	gap: 10px;
+}
+
+header .nav-list-liks li {
+	display: flex;
+	width: 130px;
+	height: 20px;
+	place-content: center;
+	place-items: center;
+	border: 1px solid var(--orange);
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+header .nav-list-liks li:hover {
+	background-color: var(--blue-metal);
 }
 
 header nav a {
@@ -62,6 +86,7 @@ header nav a {
 }
 
 main {
+	height: 100%;
 	background-color: var(--blue-metal);
 	padding: 0 8px;
 }
@@ -89,6 +114,11 @@ main form input:focus-visible {
 	padding: 8px 0;
 }
 
+.main-year-container {
+	max-width: 320px;
+	margin: 12px auto;
+}
+
 .main-label-year {
 	font-size: var(--md);
 }
@@ -108,7 +138,6 @@ main form input:focus-visible {
 main .main-form-container {
 	display: grid;
 	grid-template-rows: auto auto;
-	width: 100%;
 	height: auto;
 }
 
@@ -153,19 +182,34 @@ main .main-form-container {
 	background-color: var(--orange);
 }
 
-.main-result-container {
-	display: grid;
-	grid-template-columns: auto 1fr;
-	padding: 16px 0;
+.primary-button:hover {
+	opacity: 60%;
 }
 
-.main-result-container table {
+.main--secondary-button{
+	background-color: var(--red-out);
+}
+
+.main--primary-button {
+	margin-bottom: 4px;
+}
+
+.main-result-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-items: center;
+	padding-bottom: 12px;
+}
+
+.main-result-container .main-result-table {
+	max-width: 300px;
 	text-align: left;
 }
 
 .main-result-container table td, 
 .main-result-container table th {
 	font-size: var(--md);
+	height: 36px;
 	border-bottom: 1px solid black;
 }
 
@@ -178,11 +222,14 @@ main .main-form-container {
 }
 
 footer {
-	display: grid;
-	grid-template-rows: auto 1fr;
+	display: flex;
+	gap: 20px;
+	position: relative;
+	bottom: 0;
 	width: 100%;
-	height: 60px;
+	height: 70px;
 	justify-content: center;
+	place-items: center;
 	background-color: var(--green-dark);
 }
 
@@ -190,13 +237,11 @@ footer .footer-dedication {
 	font-size: var(--sm);
 	color: #06d6a0;
 	text-align: center;
-	padding: 8px 0 0 0;
 }
 
 footer .footer-others-links {
 	display: flex;
+	flex-direction: column;
 	align-self: center;
-	gap: 10px;
+	gap: 6px;
 }
-
-

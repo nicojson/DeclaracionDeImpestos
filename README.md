@@ -12,5 +12,6 @@
 - Implementar nuestras formulas en JavaSrip 
 - Convertir nuestras formulas en funciones
 - Integrarlo con HTML y CSS
+- Version Mobile and portatil
 
 
