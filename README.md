@@ -6,7 +6,7 @@
 ### México de saber cuanto impuesto pagan, llevar un control 
 ### de sus dedudciones personales y del interes generado de sus 
 ### inversiones decidi crear este proyecto, en este feature nos vamos
-### a sentrar el el calculo anual del ISR:
+### a centrar el el calculo anual del ISR:
 
 - Generar archivos y carpetas
 - Implementar nuestras formulas en JavaSrip 
